@@ -760,12 +760,39 @@
         });
 
         // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! For faster response, contact me directly on Discord: silencedev.');
-            this.reset();
+        //document.querySelector('.contact-form').addEventListener('submit', function(e) {
+           // e.preventDefault();
+            //alert('Thank you for your message! For faster response, contact me directly on Discord: silencedev.');
+            //this.reset();
+        //});
+
+       document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+    const action = form.action;
+
+    try {
+        const response = await fetch(action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
         });
 
+        if (response.ok) {
+            alert("Thanks for your message! I'll be in touch soon.");
+            form.reset();
+        } else {
+            alert("Oops! Something went wrong. Please try again or contact me on Discord.");
+        }
+    } catch (error) {
+        alert("There was an error submitting the form.");
+        console.error(error);
+    }
+});
         // Initialize particles
         createParticles();
 
