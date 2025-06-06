@@ -270,6 +270,36 @@
             position: relative;
             font-family: 'Times New Roman', serif;
         }
+       .price-tag {
+        margin-top:20px;
+    background: rgba(255, 255, 255, 0.041); /* Transparent glass effect */
+    backdrop-filter: blur(10px); /* Frosted glass */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 290px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.price-tag:hover {
+    transform: scale(1.05);
+}
+         .price-tag::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #666666, #999999, #666666);
+            border-radius: 2px;
+        }
+
 
         .section-title::after {
             content: '';
@@ -299,6 +329,8 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            display: block;
+            text-align:  center;
         }
 
         .service-card::before {
@@ -332,6 +364,7 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #ffffff;
+            align-items: center;
         }
 
         .service-card p {
@@ -575,16 +608,25 @@
                 <div class="service-icon">🤖</div>
                 <h3>Discord Bots</h3>
                 <p>I can create you a Discord bot tailored to your server's needs. From moderation and music to gaming and community management - I build bots that enhance your servers experience with precision.</p>
+                <div class="price-tag">
+                    <h1>Price</h1>
+                    <p>5-25$</p>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon">🌐</div>
                 <h3>Web Applications</h3>
                 <p>I can build you a modern, responsive web application - whether it's a sleek dashboard panel, an admin interface, or an interactive web experience that works smoothly on any device.</p>
+                 <div class="price-tag">
+                    <h1>Price</h1>
+                    <p>10-30$</p>
+                </div>
             </div>
             <div class="service-card">
                 <div class="service-icon">🛠️</div>
                 <h3>Maintenance & Support</h3>
                 <p>Ongoing maintenance, updates, and technical support for your Discord bots and web applications. Keep your projects running smoothly in the digital realm, 24/7. All bots are hosted by me! So you don't even have to worry</p>
+               
             </div>
         </div>
     </section>
@@ -600,15 +642,15 @@
             </div>
             <div class="about-stats">
                 <div class="stat-card">
-                    <span class="stat-number">50+</span>
+                    <span class="stat-number">10+</span>
                     <span class="stat-label">Bots Created</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">100K+</span>
-                    <span class="stat-label">Users Served</span>
+                    <span class="stat-number">1 year</span>
+                    <span class="stat-label">Of experience</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">25+</span>
+                    <span class="stat-number">30+</span>
                     <span class="stat-label">Web Apps Built</span>
                 </div>
                 <div class="stat-card">
