@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝕊𝕚𝕝𝕖𝕟𝕔𝕖 - Discord Developer</title>
+    <title>Silence - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -12,242 +12,34 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-            color: #ffffff;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            position: relative;
-        }
-
-        /* Rose decorations */
-        .rose-decoration {
-            position: fixed;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.15;
-            width: 60px;
-            height: 60px;
-            background-image: url("");
-            background-size: contain;
-            background-repeat: no-repeat;
-            filter: brightness(0.8);
-            animation: sway 6s ease-in-out infinite;
-        }
-
-        @keyframes sway {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(5deg) scale(1.05); }
-        }
-
-        .rose-1 { top: 10%; left: 5%; transform: rotate(-15deg); animation-delay: 0s; }
-        .rose-2 { top: 20%; right: 10%; transform: rotate(25deg); animation-delay: 1s; }
-        .rose-3 { bottom: 30%; left: 8%; transform: rotate(-45deg); animation-delay: 2s; }
-        .rose-4 { bottom: 15%; right: 5%; transform: rotate(35deg); animation-delay: 3s; }
-        .rose-5 { top: 60%; left: 15%; transform: rotate(10deg); animation-delay: 4s; }
-        .rose-6 { top: 40%; right: 20%; transform: rotate(-30deg); animation-delay: 5s; }
-        .rose-7 { top: 80%; left: 70%; transform: rotate(60deg); animation-delay: 2.5s; }
-        .rose-8 { top: 5%; left: 60%; transform: rotate(-20deg); animation-delay: 1.5s; }
-
-        /* Animated background particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #ffffff;
-            border-radius: 50%;
-            opacity: 0.2;
-            animation: float 25s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.2; }
-            90% { opacity: 0.2; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(15px);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid #333;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            filter: brightness(1.2) contrast(1.1);
-            border: 2px solid #666;
-        }
-
-        .logo:hover {
-            text-shadow: 0 0 20px #ffffff;
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover {
-            color: #cccccc;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ffffff;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 20px;
         }
 
-        .hero-content {
+        .portfolio-container {
             max-width: 800px;
-            padding: 0 2rem;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff, #cccccc, #888888, #ffffff);
-            background-size: 300% 300%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 3s ease-in-out infinite;
-            font-family: 'Times New Roman', serif;
-            font-weight: bold;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-        }
-
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero h2 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: #cccccc;
-            animation: slideInUp 1s ease-out 0.3s both;
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            color: #aaaaaa;
-            animation: slideInUp 1s ease-out 0.6s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #333333, #555555, #333333);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            animation: slideInUp 1s ease-out 0.9s both;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #666666;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 
+                0 8px 32px rgba(31, 38, 135, 0.37),
+                0 2px 8px rgba(255, 255, 255, 0.5) inset;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-            border-color: #ffffff;
-        }
-
-        @keyframes slideInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -255,568 +47,249 @@
             }
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 300;
+            color: #666;
+            letter-spacing: -2px;
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            font-weight: 400;
+        }
+
+        .section {
+            margin-bottom: 35px;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #ffffff;
-            position: relative;
-            font-family: 'Times New Roman', serif;
-        }
-       .price-tag {
-        margin-top:20px;
-    background: rgba(255, 255, 255, 0.041); /* Transparent glass effect */
-    backdrop-filter: blur(10px); /* Frosted glass */
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    border-radius: 1rem;
-    padding: 1.5rem;
-    width: 290px;
-    color: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.price-tag:hover {
-    transform: scale(1.05);
-}
-         .price-tag::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(45deg, #666666, #999999, #666666);
-            border-radius: 2px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-@media (max-width: 600px) {
-    .price-tag {
-        padding: 1rem;
-        font-size: 0.9rem;
-        max-width: 95%;
-    }
-
-    .price-tag::after,
-    .section-title::after {
-        width: 60px;
-    }
-}
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(45deg, #666666, #999999, #666666);
-            border-radius: 2px;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: rgba(20, 20, 20, 0.95);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid #333333;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-            display: block;
-            text-align:  center;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #666666;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #cccccc;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            align-items: center;
-        }
-
-        .service-card p {
-            color: #aaaaaa;
-            line-height: 1.6;
-        }
-
-        /* About */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            line-height: 1.7;
+            color: #2c3e50;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #aaaaaa;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .stat-card {
-            background: rgba(30, 30, 30, 0.9);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid #444444;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: #666666;
-            transform: translateY(-2px);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffffff;
-            display: block;
-        }
-
-        .stat-label {
-            color: #cccccc;
-            font-size: 0.9rem;
-        }
-
-        /* Contact */
-        .contact-container {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .discord-contact {
-            background: rgba(20, 20, 20, 0.95);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid #333333;
-            max-width: 500px;
-            margin: 2rem auto;
-            transition: all 0.3s ease;
-        }
-
-        .discord-contact:hover {
-            border-color: #666666;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-        }
-
-        .discord-username {
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 2px solid #444444;
-            margin: 1rem 0;
-            letter-spacing: 1px;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #cccccc;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(20, 20, 20, 0.9);
-            border: 2px solid #333333;
-            border-radius: 8px;
-            color: #ffffff;
+        .about-content p {
+            margin-bottom: 18px;
             font-size: 1rem;
-            transition: all 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #666666;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        .about-content p:last-child {
+            margin-bottom: 0;
         }
 
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(45deg, #333333, #555555);
-            color: white;
-            padding: 1rem;
-            border: 2px solid #666666;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-color: #ffffff;
-        }
-
-        /* Footer */
-        footer {
-            background: #000000;
-            padding: 2rem;
+        .role-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 16px;
+            padding: 20px;
             text-align: center;
-            color: #888888;
-            border-top: 1px solid #333333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.5);
         }
 
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        .role-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #34495e;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
         }
 
-        /* Emphasis styles */
-        .emphasis {
-            color: #ffffff;
-            font-weight: bold;
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c3e50;
+            transition: all 0.3s ease;
         }
 
-        .subtle-text {
-            color: #999999;
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .ecommerce-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .ecommerce-link:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-text {
+            color: #5a6c7d;
             font-size: 0.9rem;
             font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .roles-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Animated background particles -->
-    <div class="particles" id="particles"></div>
+    <div class="portfolio-container">
+        <div class="header">
+            <div class="profile-image">NM</div>
+            <h1 class="name">Silence</h1>
+            <p class="subtitle">Developer</p>
+        </div>
 
-    <!-- Rose decorations -->
-    <div class="rose-decoration rose-1"></div>
-    <div class="rose-decoration rose-2"></div>
-    <div class="rose-decoration rose-3"></div>
-    <div class="rose-decoration rose-4"></div>
-    <div class="rose-decoration rose-5"></div>
-    <div class="rose-decoration rose-6"></div>
-    <div class="rose-decoration rose-7"></div>
-    <div class="rose-decoration rose-8"></div>
+        <div class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+              <p>I am Silence, a student developer that enjoys, reading, writing, piano, technology, and music. I am always open to chat about Apple technology or programming related topics!</p>
+        </div>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">
-                <img src="image.webp" alt="𝕊𝕚𝕝𝕖𝕟𝔠𝔢">
-                𝕊𝕚𝕝𝕖𝕟𝔠𝔢
+        <div class="section">
+            <h2 class="section-title">Roles & Expertise</h2>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-title">Apple Developer</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Python Developer</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Web Developer</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Pianist</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Retired Speedcuber</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Artist</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Barista</div>
+                </div>
+                <div class="role-card">
+                    <div class="role-title">Writer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Swift</span>
+                <span class="skill-tag">SwiftUI</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">E-commerce</h2>
+            <a href="https://payhip.com/MutedTone" class="ecommerce-link" target="_blank">
+                <span>Visit my Store</span>
+                <span>→</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>𝕊𝕚𝕝𝕖𝕟𝔠𝔢</h1>
-            <h2>Discord Bot & Web App Developer</h2>
-            <p>I build Discord bots and custom web applications tailored to your needs.</p>
-            <a href="#contact" class="cta-button">Contact Me on Discord</a>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="fade-in">
-        <h2 class="section-title">Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🤖</div>
-                <h3>Discord Bots</h3>
-                <p>I can create you a Discord bot tailored to your server's needs. From moderation and music to gaming and community management - I build bots that enhance your servers experience with precision.</p>
-                <div class="price-tag">
-                    <h1>Price</h1>
-                    <p>5-25$</p>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🌐</div>
-                <h3>Web Applications</h3>
-                <p>I can build you a modern, responsive web application - whether it's a sleek dashboard panel, an admin interface, or an interactive web experience that works smoothly on any device.</p>
-                 <div class="price-tag">
-                    <h1>Price</h1>
-                    <p>10-30$</p>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🛠️</div>
-                <h3>Maintenance & Support</h3>
-                <p>Ongoing maintenance, updates, and technical support for your Discord bots and web applications. Keep your projects running smoothly in the digital realm, 24/7. All bots are hosted by me! So you don't even have to worry</p>
-               
-            </div>
+        <div class="footer">
+            <p class="footer-text">Made by Silence</p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-        <h2 class="section-title">About 𝕊𝕚𝕝𝕖𝕟𝔠𝔢</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Welcome to the shadows of development. I specialize in creating powerful Discord bots and custom web applications that enhance your community.</p>
-                <p>With expertise in modern web technologies and Discord's API, I deliver solutions that are not only functional but also intuitive and hauntingly beautiful. Every project is crafted with meticulous attention to detail.</p>
-                <p>Whether you need a simple moderation bot or a complex management system, I'm here to transform your ideas into digital reality through the art of code.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <span class="stat-number">10+</span>
-                    <span class="stat-label">Bots Created</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">1 year</span>
-                    <span class="stat-label">Of experience</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Web Apps Built</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Support</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <h3 class="emphasis">Ready to start your project?</h3>
-            <p style="color: #aaaaaa; font-size: 1.2rem; margin: 1rem 0 2rem;">Contact me directly on Discord for the fastest response!</p>
-            
-            <div class="discord-contact">
-                <h4 style="color: #ffffff; margin-bottom: 1rem; font-size: 1.3rem;">Discord Username</h4>
-                <div class="discord-username">silencedev.</div>
-                <p class="subtle-text">Don't forget the period at the end!</p>
-            </div>
-        </div>
-        
-        <form action="https://formspree.io/f/xvgrzqkj" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="project">Project Type</label>
-                <input type="text" id="project" name="project" placeholder="Discord Bot, Web App, etc.">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message (Or contact me on Discord!)</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 𝕊𝕚𝕝𝕖𝕟𝔠𝔢. Made by Silence, All rights reserved</p>
-    </footer>
-
-    <script>
-        // Create animated particles
-        function createParticles() {
-            const particles = document.getElementById('particles');
-            const particleCount = 60;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 25 + 's';
-                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
-                particles.appendChild(particle);
-            }
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.98)';
-            } else {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
-            }
-        });
-
-        // Form submission
-        //document.querySelector('.contact-form').addEventListener('submit', function(e) {
-           // e.preventDefault();
-            //alert('Thank you for your message! For faster response, contact me directly on Discord: silencedev.');
-            //this.reset();
-        //});
-
-       document.getElementById('contact-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-    const action = form.action;
-
-    try {
-        const response = await fetch(action, {
-            method: 'POST',
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            alert("Thanks for your message! I'll be in touch soon.");
-            form.reset();
-        } else {
-            alert("Oops! Something went wrong. Please try again or contact me on Discord.");
-        }
-    } catch (error) {
-        alert("There was an error submitting the form.");
-        console.error(error);
-    }
-});
-        // Initialize particles
-        createParticles();
-
-        // Add some interactive effects
-        document.querySelectorAll('.service-card, .stat-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    </script>
+    </div>
 </body>
 </html>
